@@ -1,6 +1,6 @@
 import * as React from 'react'
+import DevTools from 'mobx-react-devtools'
 
-import Timerview from './Timerview'
 import Description from './Description'
 
 import { AppState, Item } from '../store'
@@ -10,7 +10,7 @@ export default class App extends React.Component<{store: AppState}, {}> {
     return (
       <div>
         <Description text={this.props.store.description} />
-        <Timerview store={this.props.store} />
+        <DevTools />
       </div>
     )
   }
