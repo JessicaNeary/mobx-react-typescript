@@ -1,5 +1,5 @@
 import * as React from 'react';
-import AppState from '../store'
+import { AppState } from '../store'
 import DevTools from 'mobx-react-devtools'
 import { observer } from 'mobx-react'
 

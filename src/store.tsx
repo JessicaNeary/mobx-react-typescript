@@ -1,8 +1,17 @@
 import { observable } from 'mobx'
 
-export default class AppState {
+export class Item {
+  @observable content: string
+  @observable editing: boolean = false
+
+  constructor(content: string) {
+    this.content = content
+  }
+}
+
+export class AppState {
     @observable timer: number = 0;
-    text: string = 'A very thing'
+    description: Item = new Item('A very thing')
 
     constructor() {
         setInterval(() => {

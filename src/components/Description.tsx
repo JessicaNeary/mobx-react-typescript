@@ -1,13 +1,13 @@
 import * as React from 'react'
-import AppState from '../store'
+import { Item } from '../store'
 
-
-export default class Description extends React.Component<{text: string}, {}> {
+export default class Description extends React.Component<{text: Item}, {}> {
   render() {
+    const text = this.props.text
     return (
       <div>
         <h1>DESCRIPTION</h1>
-        <div>{this.props.text}</div>
+        <div>{text.content}</div>
       </div>
     )
   }

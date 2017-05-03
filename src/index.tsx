@@ -6,7 +6,7 @@ import DevTools from 'mobx-react-devtools';
 
 import App from './components/App'
 
-import AppState from './store'
+import { AppState } from './store'
 
 const store =  new AppState();
 ReactDOM.render(<App store={store} />, document.getElementById('root'));
