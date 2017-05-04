@@ -10,3 +10,11 @@ body {
 .ContactInfo {
   padding-top: 30px;
 }
+
+.ServiceDetails {
+  padding-left: 15px;
+}
+
+.ServiceDetails img {
+  padding-right: 10px;
+}

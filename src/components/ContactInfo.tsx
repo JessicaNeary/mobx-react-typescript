@@ -9,7 +9,7 @@ export default class ContactInfo extends React.Component<{supplier: Supplier}, {
   render() {
     const supplier = this.props.supplier
     return (
-      <Col md={5} mdOffset={1}>
+      <Col md={5}>
       <ul className='ContactInfo'>
         { (supplier.address.content !== undefined) ? <li className='address'><EditableDiv text={supplier.address} /></li> : null }
         { (supplier.phone.content !== undefined) ? <li className='phone'><EditableDiv text={supplier.phone} /></li> : null }
