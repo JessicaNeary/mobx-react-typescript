@@ -15,7 +15,9 @@ export interface SupplierData {
   street: string
   city: string
   country: string
-  phone: string
+  phone?: string
+  email?: string
+  website?: string
   description: string
   images: string[]
 }
@@ -23,10 +25,12 @@ export interface SupplierData {
 export class Supplier {
   id: number
   @observable name: Item
+  @observable description: Item
   @observable address: Item
   @observable country: Item
-  @observable phone: Item
-  @observable description: Item
+  @observable phone?: Item
+  @observable email?: Item
+  @observable website?: Item
   images: string[]
 
   constructor(data: SupplierData) {
@@ -36,6 +40,8 @@ export class Supplier {
     this.address = new Item(address)
     this.country = new Item(data.country)
     this.phone = new Item(data.phone)
+    this.email = new Item(data.email)
+    this.website = new Item(data.website)
     this.description = new Item(data.description)
     this.images = data.images
   }

@@ -9,6 +9,7 @@ const dumbyData = [
     city: 'Auckland',
     country: 'New Zealand',
     phone: '09-000-0000',
+    email: 'info@heritage.com',
     description: 'An upscale hotel',
     images: [
       'http://placehold.it/150x150', 'http://placehold.it/150x150', 'http://placehold.it/150x150'
