@@ -7,7 +7,7 @@ export default class Description extends React.Component<{text: Item}, {}> {
   render() {
     return (
       <div>
-        <h1>DESCRIPTION</h1>
+        <h4>DESCRIPTION</h4>
         <EditableDiv text={this.props.text}/>
       </div>
     )

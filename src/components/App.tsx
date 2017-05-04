@@ -1,7 +1,7 @@
 import * as React from 'react'
 import DevTools from 'mobx-react-devtools'
 
-import Description from './Description'
+import SupplierDetails from './SupplierDetails'
 
 import { AppState } from '../store'
 
@@ -10,7 +10,7 @@ export default class App extends React.Component<{store: AppState}, {}> {
     const data = this.props.store.data
     return (
       <div>
-        <Description text={data.description} />
+        <SupplierDetails supplier={data} />
         <DevTools />
       </div>
     )

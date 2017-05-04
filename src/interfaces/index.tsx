@@ -9,7 +9,7 @@ export class Item {
   }
 }
 
-interface SupplierData {
+export interface SupplierData {
   id: number
   name: string
   street: string
