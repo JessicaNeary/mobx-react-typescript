@@ -3,6 +3,7 @@ import * as React from 'react'
 import EditableDiv from './EditableDiv'
 import Description from './Description'
 import ContactInfo from './ContactInfo'
+import Images from './Images'
 
 import { Supplier } from '../interfaces'
 
@@ -16,6 +17,7 @@ export default class SupplierDetails extends React.Component<{supplier: Supplier
         </h1>
         <Description text={supplier.description} />
         <ContactInfo supplier={supplier} />
+        <Images images={supplier.images} />
       </div>
     )
   }

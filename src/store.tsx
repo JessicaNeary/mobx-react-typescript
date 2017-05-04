@@ -9,7 +9,10 @@ const dumbyData = [
     city: 'Auckland',
     country: 'New Zealand',
     phone: '09-000-0000',
-    description: 'An upscale hotel'
+    description: 'An upscale hotel',
+    images: [
+      'http://placehold.it/150x150', 'http://placehold.it/150x150', 'http://placehold.it/150x150'
+    ]
   }
 ]
 

@@ -17,6 +17,7 @@ export interface SupplierData {
   country: string
   phone: string
   description: string
+  images: string[]
 }
 
 export class Supplier {
@@ -26,6 +27,7 @@ export class Supplier {
   @observable country: Item
   @observable phone: Item
   @observable description: Item
+  images: string[]
 
   constructor(data: SupplierData) {
     const address = `${data.street}, ${data.city}`
@@ -35,5 +37,6 @@ export class Supplier {
     this.country = new Item(data.country)
     this.phone = new Item(data.phone)
     this.description = new Item(data.description)
+    this.images = data.images
   }
 }
