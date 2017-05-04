@@ -1,14 +1,18 @@
 import { observable } from 'mobx'
+import { Item, Supplier } from './interfaces'
 
-export class Item {
-  @observable content: string
-  @observable editing: boolean = false
-
-  constructor(content: string) {
-    this.content = content
+const dumbyData = [
+  {
+    id: 10001,
+    name: 'Heritage Hotel',
+    street: '90 FEDERAL STREET',
+    city: 'Auckland',
+    country: 'New Zealand',
+    phone: '09-000-0000',
+    description: 'An upscale hotel'
   }
-}
+]
 
 export class AppState {
-    description: Item = new Item('A very thing')
+    data: Supplier = new Supplier(dumbyData[0])
 }

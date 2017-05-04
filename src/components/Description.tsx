@@ -1,6 +1,5 @@
 import * as React from 'react'
-import { Item } from '../store'
-import { observer } from 'mobx-react'
+import { Item } from '../interfaces'
 
 import EditableDiv from './EditableDiv'
 
