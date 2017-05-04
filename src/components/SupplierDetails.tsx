@@ -1,7 +1,8 @@
 import * as React from 'react'
 
-import Description from './Description'
 import EditableDiv from './EditableDiv'
+import Description from './Description'
+import ContactInfo from './ContactInfo'
 
 import { Supplier } from '../interfaces'
 
@@ -14,6 +15,7 @@ export default class SupplierDetails extends React.Component<{supplier: Supplier
           <EditableDiv text={supplier.name} />
         </h1>
         <Description text={supplier.description} />
+        <ContactInfo supplier={supplier} />
       </div>
     )
   }

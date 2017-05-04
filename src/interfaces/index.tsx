@@ -22,17 +22,17 @@ export interface SupplierData {
 export class Supplier {
   id: number
   @observable name: Item
-  @observable street: Item
-  @observable city: Item
+  @observable address: Item
   @observable country: Item
   @observable phone: Item
   @observable description: Item
 
   constructor(data: SupplierData) {
+    const address = `${data.street}, ${data.city}`
     this.id = data.id
     this.name = new Item(data.name)
-    this.street = new Item(data.street)
-    this.city = new Item(data.city)
+    this.address = new Item(address)
+    this.country = new Item(data.country)
     this.phone = new Item(data.phone)
     this.description = new Item(data.description)
   }
