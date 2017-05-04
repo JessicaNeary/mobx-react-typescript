@@ -18,7 +18,7 @@ const dummySupplier =
     country: 'New Zealand',
     phone: '09-000-0000',
     email: 'info@heritage.com',
-    description: 'An upscale hotel',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vulputate dignissim blandit. Proin in pellentesque nisl. Suspendisse fringilla nibh et mauris rutrum, sit amet rutrum tellus vehicula. Mauris a accumsan mauris. Vestibulum fermentum, odio nec luctus tempor, felis nisl ornare nisl, eget feugiat justo purus vitae mi.',
     images: [
       'http://placehold.it/150x150', 'http://placehold.it/150x150', 'http://placehold.it/150x150'
     ],

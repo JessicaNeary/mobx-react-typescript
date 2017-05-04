@@ -11,7 +11,7 @@ export default class ServicesList extends React.Component<{services: Service[]},
     })
     return (
       <div className='ServicesList'>
-        <h4>SERVICES</h4>
+        <h5 className='subheading'>SERVICES:</h5>
         {services}
       </div>
     )
