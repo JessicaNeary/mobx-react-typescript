@@ -7,6 +7,7 @@ export default class Images extends React.Component<{images: string[]}, {}> {
     })
     return (
       <div className='Images'>
+        <h4>IMAGES</h4>
         {imageDisplay}
       </div>
     )
