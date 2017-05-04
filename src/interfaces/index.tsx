@@ -1,15 +1,6 @@
 import { observable } from 'mobx'
 
-export class Item {
-  @observable content: string
-  @observable editing: boolean = false
-
-  constructor(content: string) {
-    this.content = content
-  }
-}
-
-export interface SupplierData {
+interface SupplierData {
   id: number
   name: string
   street: string
@@ -20,6 +11,7 @@ export interface SupplierData {
   website?: string
   description: string
   images: string[]
+  services: Service[]
 }
 
 export class Supplier {
@@ -32,6 +24,7 @@ export class Supplier {
   @observable email?: Item
   @observable website?: Item
   images: string[]
+  @observable services: Service[]
 
   constructor(data: SupplierData) {
     const address = `${data.street}, ${data.city}`
@@ -44,5 +37,39 @@ export class Supplier {
     this.website = new Item(data.website)
     this.description = new Item(data.description)
     this.images = data.images
+    this.services = data.services
+  }
+}
+
+interface ServiceData {
+  id: number
+  name: string
+  text: string
+  supplierId: number
+  image: string
+}
+
+export class Service {
+  id: number
+  supplierId: number
+  @observable name: Item
+  @observable text: Item
+  image: string
+
+  constructor(data: ServiceData) {
+    this.id = data.id
+    this.supplierId = data.supplierId
+    this.name = new Item(data.name.toUpperCase())
+    this.text = new Item(data.text)
+    this.image = data.image
+  }
+}
+
+export class Item {
+  @observable content: string
+  @observable editing: boolean = false
+
+  constructor(content: string) {
+    this.content = content
   }
 }

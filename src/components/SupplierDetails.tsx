@@ -1,5 +1,6 @@
 import * as React from 'react'
 
+import ServiceDetails from './ServiceDetails'
 import EditableDiv from './EditableDiv'
 import Description from './Description'
 import ContactInfo from './ContactInfo'
@@ -10,6 +11,9 @@ import { Supplier } from '../interfaces'
 export default class SupplierDetails extends React.Component<{supplier: Supplier}, {}> {
   render() {
     const supplier = this.props.supplier
+    const services = supplier.services.map(function (service, index) {
+      return <ServiceDetails key={index} service={service}/>
+    })
     return (
       <div className='SupplierDetails'>
         <h1 className='name'>
@@ -18,6 +22,7 @@ export default class SupplierDetails extends React.Component<{supplier: Supplier
         <Description text={supplier.description} />
         <ContactInfo supplier={supplier} />
         <Images images={supplier.images} />
+        {services}
       </div>
     )
   }
