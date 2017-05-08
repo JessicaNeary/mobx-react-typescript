@@ -1,17 +1,33 @@
 import { observable } from 'mobx'
 
-interface SupplierData {
+export interface SupplierData {
   id: number
   name: string
+  host: string
   street: string
   city: string
+  region: string
+  state: string
   country: string
   phone?: string
+  mobilePhone?: string
   email?: string
   website?: string
+  postAddress?: string
+  comments?: string
   description: string
-  images: string[]
-  services: Service[]
+  grade1:string
+  grade2:string
+  active:boolean
+  services: ServiceBrief[]
+}
+
+export interface ServiceBrief {
+  id: number
+  name: string
+  type: string
+  currency: string
+  deleted?: boolean
 }
 
 export class Supplier {
@@ -21,10 +37,11 @@ export class Supplier {
   @observable address: Item
   @observable country: Item
   @observable phone?: Item
+  @observable mobilePhone?: Item
   @observable email?: Item
   @observable website?: Item
   images: string[]
-  @observable services: Service[]
+  @observable services: ServiceBrief[]
 
   constructor(data: SupplierData) {
     const address = `${data.street}, ${data.city}`
@@ -33,10 +50,13 @@ export class Supplier {
     this.address = new Item(address)
     this.country = new Item(data.country)
     this.phone = new Item(data.phone)
+    this.mobilePhone = new Item(data.mobilePhone)
     this.email = new Item(data.email)
     this.website = new Item(data.website)
     this.description = new Item(data.description)
-    this.images = data.images
+    this.images = [
+      'http://placehold.it/150x150', 'http://placehold.it/150x150', 'http://placehold.it/150x150'
+    ]
     this.services = data.services
   }
 }

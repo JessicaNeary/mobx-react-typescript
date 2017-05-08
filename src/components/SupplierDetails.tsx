@@ -22,7 +22,6 @@ export default class SupplierDetails extends React.Component<{supplier: Supplier
           <ContactInfo supplier={supplier} />
         </Row>
         <Images images={supplier.images} />
-        <ServicesList services={supplier.services} />
       </Grid>
     )
   }
