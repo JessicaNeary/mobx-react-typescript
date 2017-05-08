@@ -14,13 +14,12 @@ export default class ServiceDetails extends React.Component<{service: Service}, 
     return (
       <Row className='ServiceDetails'>
         <Col>
-          <img src={service.image} />
+          <img src='http://placehold.it/150x150' />
         </Col>
         <Col>
           <h5 className='name'>
             <EditableDiv text={service.name} />
           </h5>
-          <EditableDiv text={service.text} />
         </Col>
       </Row>
     )

@@ -19,15 +19,7 @@ export interface SupplierData {
   grade1:string
   grade2:string
   active:boolean
-  services: ServiceBrief[]
-}
-
-export interface ServiceBrief {
-  id: number
-  name: string
-  type: string
-  currency: string
-  deleted?: boolean
+  services: ServiceData[]
 }
 
 export class Supplier {
@@ -41,7 +33,7 @@ export class Supplier {
   @observable email?: Item
   @observable website?: Item
   images: string[]
-  @observable services: ServiceBrief[]
+  @observable services: Service[]
 
   constructor(data: SupplierData) {
     const address = `${data.street}, ${data.city}`
@@ -57,31 +49,29 @@ export class Supplier {
     this.images = [
       'http://placehold.it/150x150', 'http://placehold.it/150x150', 'http://placehold.it/150x150'
     ]
-    this.services = data.services
+    this.services = []
+    for(let service of data.services) {
+      this.services.push(new Service(service))
+    }
   }
 }
 
-interface ServiceData {
+
+export interface ServiceData {
   id: number
   name: string
-  text: string
-  supplierId: number
-  image: string
+  type: string
+  currency: string
+  deleted?: boolean
 }
 
 export class Service {
   id: number
-  supplierId: number
   @observable name: Item
-  @observable text: Item
-  image: string
 
   constructor(data: ServiceData) {
     this.id = data.id
-    this.supplierId = data.supplierId
     this.name = new Item(data.name.toUpperCase())
-    this.text = new Item(data.text)
-    this.image = data.image
   }
 }
 
